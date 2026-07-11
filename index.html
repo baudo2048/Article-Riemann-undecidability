@@ -1,350 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>
-Undecidability, Prime Numbers, and a Proposed Universal Irrational Constant
-</title>
-
-<style>
-
-body{
-    font-family: Georgia, serif;
-    max-width:900px;
-    margin:auto;
-    padding:40px;
-    line-height:1.7;
-    background:#fafafa;
-    color:#222;
-}
-
-h1,h2,h3{
-    color:#1b3558;
-}
-
-header{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.abstract{
-    border-left:4px solid steelblue;
-    padding-left:20px;
-    background:#f0f7ff;
-}
-
-section{
-    margin-top:50px;
-}
-
-.definition,
-.conjecture,
-.theorem,
-.problem{
-
-    border-left:5px solid #004080;
-    background:white;
-    padding:15px;
-    margin:20px 0;
-    box-shadow:0 0 5px rgba(0,0,0,.1);
-
-}
-
-footer{
-    margin-top:80px;
-    border-top:1px solid #ccc;
-    padding-top:20px;
-    font-size:.9em;
-    color:#666;
-}
-
-code{
-    background:#eee;
-    padding:2px 4px;
-}
-
-</style>
-
-<script>
-MathJax = {
-tex:{
-inlineMath:[['$','$'],['\\(','\\)']],
-displayMath:[['$$','$$']]
-}
-};
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Author Name" />
+  <meta name="dcterms.date" content="2026-07-11" />
+  <title> Undecidability, Prime Numbers, and a Proposed Universal Irrational Constant: Toward a Paradoxical Reformulation of the Riemann Hypothesis </title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    div.abstract {
+      margin: 2em 2em 2em 2em;
+      text-align: left;
+      font-size: 85%;
+    }
+    div.abstract-title {
+      font-weight: bold;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 0.5em;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
 </head>
-
 <body>
-
-<header>
-
-<h1>
-Undecidability, Prime Numbers,<br>
-and a Proposed Universal Irrational Constant
-</h1>
-
-<h3>
-Toward a Paradoxical Reformulation of the Riemann Hypothesis
-</h3>
-
-<p>
-Author Name
-</p>
-
-<p>
-July 2026
-</p>
-
-</header>
-
+<header id="title-block-header">
+<h1 class="title"> Undecidability, Prime Numbers, and a Proposed
+Universal Irrational Constant:<br />
+Toward a Paradoxical Reformulation of the Riemann Hypothesis </h1>
+<p class="author">Author Name</p>
+<p class="date">2026-07-11</p>
 <div class="abstract">
-
-<h2>Abstract</h2>
-
-<p>
-
-This paper investigates a speculative relationship between
-prime numbers,
-a proposed universal irrational constant,
-and the logical status of the Riemann Hypothesis.
-
-We distinguish established mathematics from conjectural ideas
-and present a framework for future investigation.
-
-</p>
-
+<div class="abstract-title">Abstract</div>
+<p>This paper investigates a speculative connection between the logical
+structure of the prime numbers, a proposed universal irrational
+constant, and the Riemann Hypothesis. We formulate several conjectures
+suggesting that the apparent randomness of the prime distribution may
+arise from an underlying paradox or undecidable structure. The work
+distinguishes established mathematical facts from speculative hypotheses
+and outlines directions for future investigation.</p>
 </div>
-
-<section>
-
-<h2>1. Introduction</h2>
-
-<p>
-
-The Riemann Hypothesis remains one of the greatest open problems
-in mathematics.
-
-This article explores whether the recursive structure of the prime numbers
-may contain an inherent logical paradox leading to undecidable statements.
-
-</p>
-
-</section>
-
-<section>
-
-<h2>2. Background</h2>
-
-<div class="definition">
-
-<b>Definition.</b>
-
-A prime number is an integer greater than one having exactly
-two positive divisors.
-
-</div>
-
-<p>
-
-Every positive integer factors uniquely into primes.
-
-</p>
-
-</section>
-
-<section>
-
-<h2>3. The Riemann Zeta Function</h2>
-
-<p>
-
-The zeta function is defined by
-
-$$
-\zeta(s)=
-\sum_{n=1}^{\infty}
-\frac{1}{n^s},
-\qquad
-\Re(s)>1.
-$$
-
-Its analytic continuation extends the function
-to the complex plane except for a simple pole at
-$s=1$.
-
-</p>
-
-<div class="conjecture">
-
-<b>Riemann Hypothesis.</b>
-
-Every non-trivial zero satisfies
-
-$$
-\Re(s)=\frac12.
-$$
-
-</div>
-
-</section>
-
-<section>
-
-<h2>4. Universal Irrational Constant</h2>
-
-<div class="definition">
-
-<b>Definition.</b>
-
-Assume there exists a constant
-
-$$
-\Omega
-$$
-
-generated intrinsically from the recursive structure
-of the prime numbers.
-
-</div>
-
-<p>
-
-Its construction and mathematical properties remain to be established.
-
-</p>
-
-</section>
-
-<section>
-
-<h2>5. Prime Number Paradox</h2>
-
-<p>
-
-Suppose the recursive generation of the prime numbers
-contains a hidden self-referential structure.
-
-One may investigate whether this produces
-an incompressible sequence,
-algorithmic randomness,
-or logical independence.
-
-</p>
-
-</section>
-
-<section>
-
-<h2>6. Logical Framework</h2>
-
-<ul>
-
-<li>Gödel incompleteness</li>
-
-<li>Turing computability</li>
-
-<li>Formal arithmetic</li>
-
-<li>Recursive functions</li>
-
-<li>Algorithmic information theory</li>
-
-</ul>
-
-</section>
-
-<section>
-
-<h2>7. Main Conjecture</h2>
-
-<div class="conjecture">
-
-<b>Conjecture.</b>
-
-If the proposed universal irrational constant uniquely determines
-the recursive structure of the primes,
-then the Riemann Hypothesis may be independent
-of the chosen formal axiomatic system.
-
-</div>
-
-</section>
-
-<section>
-
-<h2>8. Open Problems</h2>
-
-<div class="problem">
-
-Construct the proposed universal irrational constant explicitly.
-
-</div>
-
-<div class="problem">
-
-Determine whether the constant is irrational or transcendental.
-
-</div>
-
-<div class="problem">
-
-Determine whether the framework implies undecidability.
-
-</div>
-
-<div class="problem">
-
-Investigate consequences for the Riemann Hypothesis.
-
-</div>
-
-</section>
-
-<section>
-
-<h2>9. Conclusion</h2>
-
-<p>
-
-This article presents a speculative framework relating
-prime numbers,
-logical paradox,
-a universal irrational constant,
-and the Riemann Hypothesis.
-
-Future work will determine whether these ideas can be formalized
-within accepted mathematical foundations.
-
-</p>
-
-</section>
-
-<footer>
-
-<h2>References</h2>
-
+</header>
+<h1 id="introduction">Introduction</h1>
+<p>The Riemann Hypothesis is one of the central open problems in
+mathematics.</p>
+<p>This article explores the possibility that:</p>
 <ol>
-
-<li>Bernhard Riemann — On the Number of Primes Less Than a Given Magnitude.</li>
-
-<li>H. M. Edwards — <i>Riemann's Zeta Function.</i></li>
-
-<li>Kurt Gödel — On Formally Undecidable Propositions.</li>
-
-<li>Alan Turing — On Computable Numbers.</li>
-
-<li>Hugh Montgomery — Pair Correlation of Zeros of the Zeta Function.</li>
-
+<li><p>the definition of prime numbers induces a hidden logical
+paradox;</p></li>
+<li><p>this paradox generates an intrinsic irrational
+structure;</p></li>
+<li><p>the resulting structure may be represented by a universal
+irrational constant;</p></li>
+<li><p>the undecidability (if any) of the Riemann Hypothesis could
+emerge from this framework.</p></li>
 </ol>
-
-</footer>
-
+<p>The purpose is exploratory rather than definitive.</p>
+<h1 id="background">Background</h1>
+<h2 id="prime-numbers">Prime Numbers</h2>
+<p>Recall the standard definition.</p>
+<div class="definition">
+<p><strong>Definition 1</strong>. A prime number is an integer greater
+than 1 having exactly two positive divisors.</p>
+</div>
+<p>Discuss:</p>
+<ul>
+<li><p>Euclid’s theorem</p></li>
+<li><p>Fundamental theorem of arithmetic</p></li>
+<li><p>Prime counting function</p></li>
+<li><p>Existing statistical models</p></li>
+</ul>
+<h1 id="the-riemann-zeta-function">The Riemann Zeta Function</h1>
+<p>Introduce</p>
+<p><span class="math display">$$\zeta(s)
+=
+\sum_{n=1}^{\infty}
+\frac1{n^s},
+\qquad
+\Re(s)&gt;1.$$</span></p>
+<p>State analytic continuation.</p>
+<p>Introduce nontrivial zeros.</p>
+<div class="conjecture">
+<p><strong>Conjecture 2</strong> (Riemann Hypothesis). Every nontrivial
+zero satisfies</p>
+<p><span class="math display">$$\Re(s)=\frac12.$$</span></p>
+</div>
+<h1 id="the-proposed-universal-irrational-constant">The Proposed
+Universal Irrational Constant</h1>
+<p>Introduce the new constant.</p>
+<div class="definition">
+<p><strong>Definition 3</strong>. Suppose there exists a constant</p>
+<p><span class="math display"><em>Ω</em></span></p>
+<p>generated intrinsically from the recursive structure of the
+primes.</p>
+<p>Its precise construction will be developed in later sections.</p>
+</div>
+<p>Discuss:</p>
+<ul>
+<li><p>motivation</p></li>
+<li><p>desired properties</p></li>
+<li><p>irrationality</p></li>
+<li><p>possible transcendence</p></li>
+<li><p>uniqueness</p></li>
+</ul>
+<h1 id="a-prime-number-paradox">A Prime Number Paradox</h1>
+<p>Present the proposed paradox.</p>
+<p>Possible outline:</p>
+<ol>
+<li><p>self-reference in primality</p></li>
+<li><p>recursive generation</p></li>
+<li><p>dependence on prior primes</p></li>
+<li><p>emergence of undecidable statements</p></li>
+</ol>
+<p>State clearly which arguments are heuristic and which are
+rigorous.</p>
+<h1 id="logical-framework">Logical Framework</h1>
+<p>Discuss:</p>
+<ul>
+<li><p>Gödel incompleteness</p></li>
+<li><p>Turing undecidability</p></li>
+<li><p>Formal systems</p></li>
+<li><p>Computability</p></li>
+<li><p>Arithmetic hierarchy</p></li>
+</ul>
+<h1 id="main-conjecture">Main Conjecture</h1>
+<div class="conjecture">
+<p><strong>Conjecture 4</strong>. If the proposed universal irrational
+constant exists and completely determines the recursive structure of the
+prime numbers, then the truth of the Riemann Hypothesis may be
+independent of the underlying formal axiomatic system.</p>
+</div>
+<p>Explain motivation.</p>
+<p>State limitations.</p>
+<h1 id="possible-consequences">Possible Consequences</h1>
+<p>Potential implications include</p>
+<ul>
+<li><p>new interpretation of prime randomness;</p></li>
+<li><p>reformulation of RH;</p></li>
+<li><p>links with algorithmic information;</p></li>
+<li><p>incompressibility of primes;</p></li>
+<li><p>logical independence.</p></li>
+</ul>
+<h1 id="open-problems">Open Problems</h1>
+<div class="problem">
+<p><strong>Problem 5</strong>. Construct the proposed universal
+irrational constant explicitly.</p>
+</div>
+<div class="problem">
+<p><strong>Problem 6</strong>. Determine whether the constant uniquely
+encodes prime distribution.</p>
+</div>
+<div class="problem">
+<p><strong>Problem 7</strong>. Investigate whether the conjectured
+paradox can be formalized.</p>
+</div>
+<div class="problem">
+<p><strong>Problem 8</strong>. Determine whether the framework has
+implications for RH.</p>
+</div>
+<h1 id="conclusion">Conclusion</h1>
+<p>Summarize:</p>
+<ul>
+<li><p>established mathematics;</p></li>
+<li><p>speculative constructions;</p></li>
+<li><p>future work.</p></li>
+</ul>
+<div class="thebibliography">
+<p><span>99</span></p>
+<p>B. Riemann. On the Number of Primes Less Than a Given Magnitude.</p>
+<p>H. M. Edwards. <em>Riemann’s Zeta Function</em>.</p>
+<p>A. M. Turing. On Computable Numbers.</p>
+<p>K. Gödel. On Formally Undecidable Propositions.</p>
+<p>H. Montgomery. The Pair Correlation of Zeros of the Zeta
+Function.</p>
+</div>
 </body>
 </html>
