@@ -1,0 +1,298 @@
+\documentclass[11pt]{article}
+
+% -------------------------------------------------
+% Packages
+% -------------------------------------------------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{cite}
+
+% -------------------------------------------------
+% Hyperref
+% -------------------------------------------------
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue
+}
+
+% -------------------------------------------------
+% Theorem Environments
+% -------------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% -------------------------------------------------
+% Commands
+% -------------------------------------------------
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+
+\DeclareMathOperator{\RePart}{Re}
+\DeclareMathOperator{\ImPart}{Im}
+\DeclareMathOperator{\Li}{Li}
+
+% -------------------------------------------------
+% Title
+% -------------------------------------------------
+
+\title{
+Undecidability, Prime Numbers, and a Proposed Universal Irrational Constant:\\
+Toward a Paradoxical Reformulation of the Riemann Hypothesis
+}
+
+\author{Author Name}
+
+\date{\today}
+
+% -------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+This paper investigates a speculative connection between the logical structure of the prime numbers, a proposed universal irrational constant, and the Riemann Hypothesis. We formulate several conjectures suggesting that the apparent randomness of the prime distribution may arise from an underlying paradox or undecidable structure. The work distinguishes established mathematical facts from speculative hypotheses and outlines directions for future investigation.
+
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+% -------------------------------------------------
+\section{Introduction}
+
+The Riemann Hypothesis is one of the central open problems in mathematics.
+
+This article explores the possibility that:
+
+\begin{enumerate}
+\item the definition of prime numbers induces a hidden logical paradox;
+\item this paradox generates an intrinsic irrational structure;
+\item the resulting structure may be represented by a universal irrational constant;
+\item the undecidability (if any) of the Riemann Hypothesis could emerge from this framework.
+\end{enumerate}
+
+The purpose is exploratory rather than definitive.
+
+% -------------------------------------------------
+\section{Background}
+
+\subsection{Prime Numbers}
+
+Recall the standard definition.
+
+\begin{definition}
+A prime number is an integer greater than 1 having exactly two positive divisors.
+\end{definition}
+
+Discuss:
+
+\begin{itemize}
+\item Euclid's theorem
+\item Fundamental theorem of arithmetic
+\item Prime counting function
+\item Existing statistical models
+\end{itemize}
+
+% -------------------------------------------------
+\section{The Riemann Zeta Function}
+
+Introduce
+
+\[
+\zeta(s)
+=
+\sum_{n=1}^{\infty}
+\frac1{n^s},
+\qquad
+\Re(s)>1.
+\]
+
+State analytic continuation.
+
+Introduce nontrivial zeros.
+
+\begin{conjecture}[Riemann Hypothesis]
+
+Every nontrivial zero satisfies
+
+\[
+\Re(s)=\frac12.
+\]
+
+\end{conjecture}
+
+% -------------------------------------------------
+\section{The Proposed Universal Irrational Constant}
+
+Introduce the new constant.
+
+\begin{definition}
+
+Suppose there exists a constant
+
+\[
+\Omega
+\]
+
+generated intrinsically from the recursive structure of the primes.
+
+Its precise construction will be developed in later sections.
+
+\end{definition}
+
+Discuss:
+
+\begin{itemize}
+\item motivation
+\item desired properties
+\item irrationality
+\item possible transcendence
+\item uniqueness
+\end{itemize}
+
+% -------------------------------------------------
+\section{A Prime Number Paradox}
+
+Present the proposed paradox.
+
+Possible outline:
+
+\begin{enumerate}
+\item self-reference in primality
+\item recursive generation
+\item dependence on prior primes
+\item emergence of undecidable statements
+\end{enumerate}
+
+State clearly which arguments are heuristic and which are rigorous.
+
+% -------------------------------------------------
+\section{Logical Framework}
+
+Discuss:
+
+\begin{itemize}
+\item Gödel incompleteness
+\item Turing undecidability
+\item Formal systems
+\item Computability
+\item Arithmetic hierarchy
+\end{itemize}
+
+% -------------------------------------------------
+\section{Main Conjecture}
+
+\begin{conjecture}
+
+If the proposed universal irrational constant exists and completely determines the recursive structure of the prime numbers, then the truth of the Riemann Hypothesis may be independent of the underlying formal axiomatic system.
+
+\end{conjecture}
+
+Explain motivation.
+
+State limitations.
+
+% -------------------------------------------------
+\section{Possible Consequences}
+
+Potential implications include
+
+\begin{itemize}
+\item new interpretation of prime randomness;
+\item reformulation of RH;
+\item links with algorithmic information;
+\item incompressibility of primes;
+\item logical independence.
+\end{itemize}
+
+% -------------------------------------------------
+\section{Open Problems}
+
+\begin{problem}
+
+Construct the proposed universal irrational constant explicitly.
+
+\end{problem}
+
+\begin{problem}
+
+Determine whether the constant uniquely encodes prime distribution.
+
+\end{problem}
+
+\begin{problem}
+
+Investigate whether the conjectured paradox can be formalized.
+
+\end{problem}
+
+\begin{problem}
+
+Determine whether the framework has implications for RH.
+
+\end{problem}
+
+% -------------------------------------------------
+\section{Conclusion}
+
+Summarize:
+
+\begin{itemize}
+\item established mathematics;
+\item speculative constructions;
+\item future work.
+\end{itemize}
+
+% -------------------------------------------------
+\bibliographystyle{plain}
+
+\begin{thebibliography}{99}
+
+\bibitem{riemann}
+B. Riemann.
+On the Number of Primes Less Than a Given Magnitude.
+
+\bibitem{edwards}
+H. M. Edwards.
+\textit{Riemann's Zeta Function}.
+
+\bibitem{turing}
+A. M. Turing.
+On Computable Numbers.
+
+\bibitem{godel}
+K. Gödel.
+On Formally Undecidable Propositions.
+
+\bibitem{montgomery}
+H. Montgomery.
+The Pair Correlation of Zeros of the Zeta Function.
+
+\end{thebibliography}
+
+\end{document}
